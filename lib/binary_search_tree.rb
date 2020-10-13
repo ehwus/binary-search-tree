@@ -7,4 +7,8 @@ class Node
     @left = left
     @right = right
   end
+
+  def <=>(node)
+    value <=> node.value
+  end
 end
