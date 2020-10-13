@@ -12,4 +12,12 @@ describe Node do
     test1 = Node.new(1, test0)
     expect(test1.left.value).to eq(0)
   end
+
+  it "can be compared" do
+    test0 = Node.new(0)
+    test1 = Node.new(1)
+    expect(test0 > test1).to eq(false)
+    expect(test1 > test0).to eq(true)
+    expect(test1 == test0).to eq(false)
+  end
 end
