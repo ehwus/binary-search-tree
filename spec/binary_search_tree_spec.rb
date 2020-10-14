@@ -28,4 +28,11 @@ describe Node do
     expect(test1 > test0).to eq(true)
     expect(test1 == test0).to eq(false)
   end
+
+  describe Tree do
+    it "accepts an array when initialized" do
+      tree = Tree.new([1, 2, 3])
+      expect(tree).to be_a_kind_of(Tree)
+    end
+  end
 end
