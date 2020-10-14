@@ -13,6 +13,14 @@ describe Node do
     expect(test1.left.value).to eq(0)
   end
 
+  it "can be chained to two other Nodes" do
+    test0 = Node.new(0)
+    test1 = Node.new(1)
+    test2 = Node.new(2, test1, test0)
+    expect(test2.left.value).to eq(1)
+    expect(test2.right.value).to eq(0)
+  end
+
   it "can be compared" do
     test0 = Node.new(0)
     test1 = Node.new(1)
