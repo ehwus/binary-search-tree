@@ -12,3 +12,9 @@ class Node
     value <=> node.value
   end
 end
+
+class Tree
+  def initialize(array)
+    
+  end
+end
