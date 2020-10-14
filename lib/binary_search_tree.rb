@@ -31,6 +31,7 @@ class Tree
   def insert(value)
     if @root.nil?
       @root = Node.new(value)
+      return
     end
   end
 end
