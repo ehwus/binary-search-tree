@@ -1,6 +1,6 @@
 class Node
   include Comparable
-  attr_reader :value, :left, :right
+  attr_accessor :value, :left, :right
 
   def initialize(value = nil, left = nil, right = nil)
     @value = value
@@ -14,12 +14,23 @@ class Node
 end
 
 class Tree
-  attr_reader :root
+  attr_accessor :root, :value
   def initialize(starting_data)
-    @root = build_tree(starting_data)
+    build_tree(starting_data)
   end
 
   def build_tree(array)
-    @root = nil if array.empty?
+    if array.empty?
+      @root = nil
+      return
+    end
+
+    array.each { |value| insert(value) }
+  end
+
+  def insert(value)
+    if @root.nil?
+      @root = Node.new(value)
+    end
   end
 end
