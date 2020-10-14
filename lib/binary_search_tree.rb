@@ -14,8 +14,12 @@ class Node
 end
 
 class Tree
-  def initialize(array)
-    @starting_data = array
-    @root = build_tree
+  attr_reader :root
+  def initialize(starting_data)
+    @root = build_tree(starting_data)
+  end
+
+  def build_tree(array)
+    @root = nil if array.empty?
   end
 end

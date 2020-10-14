@@ -38,7 +38,7 @@ describe Node do
     describe "#build_tree" do
       it "returns empty root if given empty array" do
         tree = Tree.new([])
-        expect(tree.root.value).to eq(nil)
+        expect(tree.root).to eq(nil)
       end
 
       it "builds a binary tree from initial array of one" do
