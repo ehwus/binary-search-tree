@@ -34,5 +34,17 @@ describe Node do
       tree = Tree.new([1, 2, 3])
       expect(tree).to be_a_kind_of(Tree)
     end
+
+    describe "#build_tree" do
+      it "returns empty root if given empty array" do
+        tree = Tree.new([])
+        expect(tree.root.value).to eq(nil)
+      end
+
+      it "builds a binary tree from initial array of one" do
+        tree = Tree.new([1])
+        expect(tree.root.value).to eq(1)
+      end
+    end
   end
 end

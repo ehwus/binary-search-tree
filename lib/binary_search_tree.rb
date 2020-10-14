@@ -15,6 +15,7 @@ end
 
 class Tree
   def initialize(array)
-    
+    @starting_data = array
+    @root = build_tree
   end
 end
