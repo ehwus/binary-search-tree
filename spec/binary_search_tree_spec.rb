@@ -60,7 +60,7 @@ describe Node do
         expect(tree.root.right.right.value).to eq(8)
         expect(tree.root.right.left.value).to eq(6)
       end
-      
+
       it "accounts for unordered list" do
         tree = Tree.new([9, 8, 7, 6, 5, 4, 3, 2, 1])
         expect(tree.root.value).to eq(5)
@@ -74,6 +74,14 @@ describe Node do
         expect(tree.root.value).to eq(2)
         expect(tree.root.left.value).to eq(1)
         expect(tree.root.right.value).to eq(69)
+      end
+    end
+
+    describe "#insert" do
+      it "inserts into an empty tree" do
+        empty = Tree.new
+        empty.insert(1)
+        expect(tree.root.value).to eq(1)
       end
     end
   end

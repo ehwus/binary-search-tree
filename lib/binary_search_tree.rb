@@ -14,8 +14,8 @@ class Node
 end
 
 class Tree
-  attr_accessor :root, :value
-  def initialize(starting_data)
+  attr_accessor :root
+  def initialize(starting_data = [])
     processed_list = starting_data.sort.uniq
     @root = build_tree(processed_list, 0, processed_list.length - 1)
   end
