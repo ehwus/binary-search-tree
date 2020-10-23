@@ -29,4 +29,8 @@ class Tree
     root.right = build_tree(array, mid + 1, finish)
     root
   end
+
+  def insert(value)
+    @root = Node.new(value) if @root.nil?
+  end
 end

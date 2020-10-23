@@ -81,7 +81,7 @@ describe Node do
       it "inserts into an empty tree" do
         empty = Tree.new
         empty.insert(1)
-        expect(tree.root.value).to eq(1)
+        expect(empty.root.value).to eq(1)
       end
     end
   end
