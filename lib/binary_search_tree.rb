@@ -68,6 +68,12 @@ class Tree
         end
       end
     end
+  end
 
+  def delete(value)
+    if @root.value == value && @root.left.nil? && @root.right.nil?
+      @root = nil
+      return
+    end
   end
 end
