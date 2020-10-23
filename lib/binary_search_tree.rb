@@ -30,7 +30,9 @@ class Tree
     root
   end
 
-  def insert(value)
-    @root = Node.new(value) if @root.nil?
+  def insert(value, root_node = @root)
+    if @root.nil?
+      @root = Node.new(value)
+    end
   end
 end
