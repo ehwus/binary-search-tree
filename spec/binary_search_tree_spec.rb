@@ -83,6 +83,12 @@ describe Node do
         empty.insert(1)
         expect(empty.root.value).to eq(1)
       end
+
+      it "inserts into a tree of just root" do
+        empty = Tree.new([1])
+        empty.insert(2)
+        expect(empty.root.right.value).to eq(2)
+      end
     end
   end
 end
