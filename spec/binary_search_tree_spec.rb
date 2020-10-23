@@ -102,6 +102,14 @@ describe Node do
         tree.insert(1)
         expect(tree.root.left.value).to eq(1)
       end
+
+      it "adds to a more complex tree" do
+        tree = Tree.new([1, 2, 3, 4, 5, 6, 7, 8, 9])
+        tree.insert(0)
+        tree.insert(10)
+        expect(tree.root.left.left.left.value).to eq(0)
+        expect(tree.root.right.right.right.right.value).to eq(10)
+      end
     end
   end
 end
