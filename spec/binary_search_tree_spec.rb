@@ -60,6 +60,13 @@ describe Node do
         expect(tree.root.right.right.value).to eq(8)
         expect(tree.root.right.left.value).to eq(6)
       end
+
+      it "accounts for unordered list and duplicates" do
+        tree = Tree.new([69, 69, 420, 1, 2])
+        expect(tree.root.value).to eq(69)
+        expect(tree.root.left.value).to eq(2)
+        expect(tree.root.right.value).to eq(420)
+      end
     end
   end
 end
