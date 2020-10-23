@@ -8,15 +8,16 @@ class Node
     @right = right
   end
 
-  def <=>(node)
-    value <=> node.value
+  def <=>(other)
+    value <=> other.value
   end
 end
 
 class Tree
   attr_accessor :root, :value
   def initialize(starting_data)
-    @root = build_tree(starting_data, 0, starting_data.length - 1)
+    processed_list = starting_data.sort.uniq
+    @root = build_tree(processed_list, 0, processed_list.length - 1)
   end
 
   def build_tree(array, start, finish)
