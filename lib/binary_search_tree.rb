@@ -71,9 +71,24 @@ class Tree
   end
 
   def delete(value)
-    if @root.value == value && @root.left.nil? && @root.right.nil?
-      @root = nil
+    if @root.left.nil? && @root.right.nil?
+      @root = nil if @root.value == value
       return
+    end
+
+    pointer = @root
+    loop do
+      return if pointer.nil?
+
+      if pointer.right.value == value
+        pointer.right = nil
+        break
+      elsif pointer.left.value == value
+        pointer.left = nil
+        break
+      end
+
+      pointer = pointer.value > value ? pointer.left : pointer.right
     end
   end
 end

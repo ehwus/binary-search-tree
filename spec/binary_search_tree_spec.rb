@@ -125,5 +125,11 @@ describe Tree do
       tree.delete(1)
       expect(tree.root).to eq(nil)
     end
+
+    it "deletes value from tree of 2" do
+      tree = Tree.new([1, 2])
+      tree.delete(2)
+      expect(tree.root.right).to eq(nil)
+    end
   end
 end
