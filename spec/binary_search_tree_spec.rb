@@ -46,11 +46,19 @@ describe Node do
         expect(tree.root.value).to eq(1)
       end
 
-      it "make a tree of 3" do
+      it "makes a tree of 3" do
         tree = Tree.new([1, 2, 3])
         expect(tree.root.value).to eq(2)
         expect(tree.root.left.value).to eq(1)
         expect(tree.root.right.value).to eq(3)
+      end
+
+      it "makes a larger tree" do
+        tree = Tree.new([1, 2, 3, 4, 5, 6, 7, 8, 9])
+        expect(tree.root.value).to eq(5)
+        expect(tree.root.left.left.value).to eq(1)
+        expect(tree.root.right.right.value).to eq(8)
+        expect(tree.root.right.left.value).to eq(6)
       end
     end
   end
