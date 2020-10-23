@@ -131,5 +131,19 @@ describe Tree do
       tree.delete(2)
       expect(tree.root.right).to eq(nil)
     end
+
+    it "deletes value from tree of 7" do
+      tree = Tree.new([1, 2, 3, 4, 5, 6, 7])
+      tree.delete(1)
+      expect(tree.root.left.right.value).to eq(3)
+      expect(tree.root.left.left).to eq(nil)
+    end
+
+    it "deletes more difficult value from tree of 7" do
+      tree = Tree.new([1, 2, 3, 4, 5, 6, 7])
+      tree.delete(2)
+      tree.pretty_print
+      expect(tree.root.left.value).to eq(2)
+    end
   end
 end
