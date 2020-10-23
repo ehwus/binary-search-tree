@@ -84,10 +84,23 @@ describe Node do
         expect(empty.root.value).to eq(1)
       end
 
-      it "inserts into a tree of just root" do
-        empty = Tree.new([1])
-        empty.insert(2)
-        expect(empty.root.right.value).to eq(2)
+      it "does nothing if already inserted" do
+        tree = Tree.new([1])
+        tree.insert(1)
+        expect(tree.root.right).to eq(nil)
+        expect(tree.root.left).to eq(nil)
+      end
+
+      it "adds to tree of one" do
+        tree = Tree.new([1])
+        tree.insert(2)
+        expect(tree.root.right.value).to eq(2)
+      end
+
+      it "adds left to tree of one" do
+        tree = Tree.new([3])
+        tree.insert(1)
+        expect(tree.root.left.value).to eq(1)
       end
     end
   end

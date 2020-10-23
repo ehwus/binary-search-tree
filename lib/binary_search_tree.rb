@@ -8,6 +8,14 @@ class Node
     @right = right
   end
 
+  def add_left(value)
+    @left = Node.new(value)
+  end
+
+  def add_right(value)
+    @right = Node.new(value)
+  end
+
   def <=>(other)
     value <=> other.value
   end
@@ -34,5 +42,32 @@ class Tree
     if @root.nil?
       @root = Node.new(value)
     end
+
+    pointer = @root
+    loop do
+      if pointer.value == value
+        # avoid adding duplicates
+        break
+      elsif value > pointer.value
+        # check if right node exists
+        if pointer.right.nil?
+          pointer.add_right(value)
+          break
+        else
+          pointer = pointer.right
+          next
+        end
+      else
+        # check if left node exists
+        if pointer.left.nil?
+          pointer.add_left(value)
+          break
+        else
+          pointer = pointer.left
+          next
+        end
+      end
+    end
+
   end
 end
